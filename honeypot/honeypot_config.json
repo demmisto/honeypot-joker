@@ -1,0 +1,37 @@
+{
+  "gui_username": "admin",
+  "gui_password_hash": "c23d874b10104bf157fef0fe71991615d99a8823d1eee7f8ab0dd30e953dd6df",
+  "gui_port": 6666,
+  "protocols": {
+    "http": {
+      "enabled": false,
+      "port": 8888,
+      "banner": "Apache/2.2.8 (Ubuntu)"
+    },
+    "ftp": {
+      "enabled": false,
+      "port": 2121,
+      "banner": "220 (vsFTPd 2.3.4)"
+    },
+    "ssh": {
+      "enabled": false,
+      "port": 2222,
+      "banner": "SSH-2.0-OpenSSH_7.4"
+    },
+    "snmp": {
+      "enabled": false,
+      "port": 1161,
+      "banner": "NET-SNMP version 5.5"
+    },
+    "smb": {
+      "enabled": false,
+      "port": 4450,
+      "banner": "Windows XP Service Pack 3"
+    },
+    "telnet": {
+      "enabled": false,
+      "port": 2323,
+      "banner": "\r\nlogin: "
+    }
+  }
+}

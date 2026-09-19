@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HoneyTrap — Login</title>
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --border: #1e2d40;
+    --accent: #f59e0b;
+    --accent2: #ef4444;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --green: #10b981;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(245,158,11,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(239,68,68,0.04) 0%, transparent 60%);
+  }
+  .login-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    width: 400px;
+    padding: 40px;
+  }
+  .logo {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .logo .icon { font-size: 2.5rem; }
+  .logo h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-top: 8px;
+  }
+  .logo p {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+  }
+  .field {
+    margin-bottom: 18px;
+  }
+  .field label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 14px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .field input:focus { border-color: var(--accent); }
+  .btn {
+    width: 100%;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.9; }
+  .error {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.3);
+    color: var(--accent2);
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    margin-bottom: 18px;
+  }
+  .status-bar {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  .status-item {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+</style>
+</head>
+<body>
+<div class="login-box">
+  <div class="logo">
+    <div class="icon">🍯</div>
+    <h1>HONEYTRAP</h1>
+    <p>INTRUSION DETECTION SYSTEM</p>
+  </div>
+
+  {% if error %}
+  <div class="error">⚠ {{ error }}</div>
+  {% endif %}
+
+  <form method="POST">
+    <div class="field">
+      <label>USERNAME</label>
+      <input type="text" name="username" autocomplete="off" autofocus>
+    </div>
+    <div class="field">
+      <label>PASSWORD</label>
+      <input type="password" name="password">
+    </div>
+    <button class="btn" type="submit">AUTHENTICATE →</button>
+  </form>
+
+  <div class="status-bar">
+    <div class="status-item"><div class="dot"></div>SYSTEM ONLINE</div>
+    <div class="status-item"><div class="dot"></div>SENSORS ACTIVE</div>
+  </div>
+</div>
+</body>
+</html>
